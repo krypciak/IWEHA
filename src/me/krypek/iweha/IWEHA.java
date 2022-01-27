@@ -30,7 +30,7 @@ public class IWEHA {
 				.add("i",	"ignoreCache", 	false,	false, 	ArgType.None, 			"If selected, files conatining \"cache\" will not get copied and indexed. Example: \"/home/krypek/.cache\" will be skipped")
 				.add("l", 	"doLog", 		false,	false, 	ArgType.None, 			"If selected, will print all copied files to console. Not recommended for big directories or slow terminals")
 				.add("rl", 	"reduceLog", 	false,	false, 	ArgType.Int,			"Works only if doLog is selected. Insted of printing every copy log, print only every X times.")
-				.add("rf",	"removeFiles", 	false,	false, 	ArgType.None, 			"If selected, moves files that were indexed previously and don't exist now to \"/dest/"+deletedFilesDirectoryPrefix+"path/to/file/deleted\"")
+				.add("rf",	"removeFiles", 	false,	false, 	ArgType.None, 			"If selected, moves files that were indexed previously and don't exist now to \"/dest"+deletedFilesDirectoryPrefix+"path/to/file/deleted\"")
 				.parse(args);
 		//@f:on
 
