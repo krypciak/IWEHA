@@ -21,9 +21,13 @@ Example:
 java -jar IWEHA.jar -dp /home/krypek/iweha.dat -de /mnt/sda1/backup/ -tb [/home/krypek/Documents/, /home/krypek/Downloads/] -l -rl 10 -rf
 ```
 <br>
-</h2>How does it work?</h2>
+</h2>How does it work?</h2><br>
 It checks original file mofification date and compares it with modification date stored in a HashMap.<br>
 If original modification date is bigger, the file is copied and the new modification date is stored in<br>
 an another HashMap that is later serialized into .dat file.<br>
-This way IWEHA doesn't copy unnecessary files.<br>
-The destination
+This way IWEHA doesn't copy unnecessary files.<br><br>
+
+If --removeFiles is selected, if file is indexed (in .dat file) and the original file is deleted,<br>
+the file gets moved from /dest/file to /dest/IWEHA_DELETED/file.<br><br><br>
+
+Questions? You can e-mail me at krypek@tuta.io.
