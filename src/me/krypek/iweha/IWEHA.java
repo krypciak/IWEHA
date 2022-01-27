@@ -163,11 +163,9 @@ public class IWEHA {
 			System.out.println("Done.");
 		}
 
-		if(removeFiles) {
-			for (String path1 : removedFilesList) {
+		if(removeFiles)
+			for (final String path1 : removedFilesList)
 				copyStack.add(new CopyOperation(Path.of(destPath + path1), Path.of(destPath + deletedFilesDirectoryPrefix + path1), CopyType.Move));
-			}
-		}
 		System.out.println("Copying...");
 		final CopyThread ct = new CopyThread(this);
 		ct.thread.run();
@@ -232,15 +230,15 @@ class CopyStack {
 
 	@Override
 	public String toString() {
-		String str = "";
+		final StringBuilder str = new StringBuilder();
 		for (int i = arrayPointer;; i++) {
 			if(i == array.length)
 				i = 0;
 			if(i == writeArrayPointer)
 				break;
-			str += array[i] + ", ";
+			str.append(array[i]).append(", ");
 		}
-		return "CopyStack: { " + str + " }";
+		return "CopyStack: { " + str.append(" }").toString();
 	}
 }
 

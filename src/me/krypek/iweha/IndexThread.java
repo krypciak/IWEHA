@@ -51,7 +51,7 @@ public class IndexThread {
 		Long time2 = null;
 		if(iweha.oldTimeMap != null)
 			time2 = iweha.oldTimeMap.get(path);
-		final boolean time2null = time2 == null == true;
+		final boolean time2null = (time2 == null);
 
 		iweha.newTimeMap.put(path, time1);
 

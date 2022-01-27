@@ -14,7 +14,7 @@ public class CopyThread {
 			System.out.println(str);
 	}
 
-	private void log(final String str, int reduceLog) {
+	private void log(final String str, final int reduceLog) {
 		if(iweha.log && operationCount++ % reduceLog == 0)
 			System.out.println(str);
 	}
