@@ -1,4 +1,6 @@
+bin
 .settings
+
 # Compiled class file
 *.class
 
