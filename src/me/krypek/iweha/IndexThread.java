@@ -18,12 +18,20 @@ public class IndexThread {
 	private void fileArray(final File[] files) {
 		if(files == null)
 			return;
-		for (final File file : files)
-			if(!iweha.ignoreCache || !file.getName().toLowerCase().contains("cache"))
-				file(file);
+		for (final File file : files) { file(file); }
+
 	}
 
 	private void file(final File file) {
+		if(iweha.ignoreCache) {
+			String path = file.getAbsolutePath().toLowerCase();
+
+			if(path.contains("cache") || path.contains("temp")) {
+				System.out.println("Skipping temp file: " + path);
+				return;
+			}
+		}
+
 		if(file.isDirectory()) {
 			if(iweha.excludedSet.contains(file.getAbsolutePath()))
 				return;

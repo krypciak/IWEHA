@@ -47,7 +47,7 @@ public class CopyThread {
 
 		to.toFile().getParentFile().mkdirs();
 		try {
-			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class CopyThread {
 
 		to.toFile().getParentFile().mkdirs();
 		try {
-			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING, LinkOption.NOFOLLOW_LINKS);
+			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES, LinkOption.NOFOLLOW_LINKS);
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +69,7 @@ public class CopyThread {
 
 		to.toFile().getParentFile().mkdirs();
 		try {
-			Files.move(from, to, StandardCopyOption.REPLACE_EXISTING);
+			Files.move(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
 		} catch (final IOException e) {
 			e.printStackTrace();
 		}

@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Path;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
@@ -20,6 +21,7 @@ import me.krypek.freeargparser.ParserBuilder;
 public class IWEHA {
 
 	public static void main(final String[] args) throws IOException {
+		System.out.println(Arrays.toString(args));
 		//@f:off
 		//me.krypek.freeargparser
 		final ParsedData data = new ParserBuilder()
