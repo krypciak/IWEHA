@@ -1,6 +1,5 @@
 package me.krypek.iweha;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
@@ -45,10 +44,10 @@ public class CopyThread {
 	private void copy(final Path from, final Path to) {
 		log(from + " -> " + to);
 
-		to.toFile().getParentFile().mkdirs();
 		try {
+			to.toFile().getParentFile().mkdirs();
 			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -56,21 +55,21 @@ public class CopyThread {
 	private void copySymlink(final Path from, final Path to) {
 		log("(symlink) " + from + " -> " + to);
 
-		to.toFile().getParentFile().mkdirs();
 		try {
+			to.toFile().getParentFile().mkdirs();
 			Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES, LinkOption.NOFOLLOW_LINKS);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	private void move(final Path from, final Path to) {
 		log(from + " >-> " + to, 1);
-
-		to.toFile().getParentFile().mkdirs();
+		
 		try {
+			to.toFile().getParentFile().mkdirs();
 			Files.move(from, to, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
-		} catch (final IOException e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
