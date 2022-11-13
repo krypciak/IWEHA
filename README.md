@@ -30,7 +30,7 @@ This way IWEHA doesn't copy unnecessary files.<br><br>
 If --removeFiles is selected, if file is indexed (in .dat file) and the original file is deleted,<br>
 the file gets moved from /dest/file to /dest/IWEHA_DELETED/file.<br><br><br>
 
-<br><br><br>
+<br>
 
 # License
 Licensed under GNU GPLv3 or later
