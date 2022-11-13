@@ -1,5 +1,5 @@
 # It Won't Ever Happen Again.
-IWEHA is an synchronie-type backup tool. What does that mean?<br>
+IWEHA is an synchronie-type backup tool, simmliar to rsync. What does that mean?<br>
 It means it copies only new or modified files, to keep the backup up-to-date.<br>
 
 <h2>Usage</h2>
